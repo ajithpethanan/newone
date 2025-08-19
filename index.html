@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Love Poem</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
+
+        body {
+            background: linear-gradient(to right, #ffe6f0, #fff0e6);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            overflow: hidden;
+            color: #b30059;
+        }
+
+        .poem-container {
+            background-color: rgba(255, 255, 255, 0.85);
+            border-radius: 20px;
+            padding: 30px 40px;
+            max-width: 600px;
+            box-shadow: 0 8px 16px rgba(179, 0, 89, 0.3);
+            text-align: center;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .line {
+            margin: 15px 0;
+            font-size: 1.2em;
+            line-height: 1.6em;
+            opacity: 0;
+            animation: fadeInLine 2s forwards;
+        }
+
+        .line:nth-child(1) { animation-delay: 0.5s; }
+        .line:nth-child(2) { animation-delay: 1s; }
+        .line:nth-child(3) { animation-delay: 1.5s; }
+        .line:nth-child(4) { animation-delay: 2s; }
+        .line:nth-child(5) { animation-delay: 2.5s; }
+        .line:nth-child(6) { animation-delay: 3s; }
+        .line:nth-child(7) { animation-delay: 3.5s; }
+        .line:nth-child(8) { animation-delay: 4s; }
+
+        .highlight {
+            color: #ff0066;
+            font-weight: bold;
+            font-family: 'Kaushan Script', cursive;
+        }
+
+        h1 {
+            font-family: 'Kaushan Script', cursive;
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: #b30059;
+        }
+
+        /* Fade-in animation */
+        @keyframes fadeInLine {
+            to { opacity: 1; }
+        }
+
+        /* Floating hearts animation */
+        .heart {
+            position: absolute;
+            color: #ff0066;
+            font-size: 1.5em;
+            animation: floatUp 6s linear infinite;
+            opacity: 0.8;
+        }
+
+        @keyframes floatUp {
+            0% { transform: translateY(0) scale(1); opacity: 0.8; }
+            50% { opacity: 1; }
+            100% { transform: translateY(-700px) scale(1.5); opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+    <div class="poem-container">
+        <h1>எனது காதல்</h1>
+        <div class="line">ஊர் ஊர் சென்று, கோவில் உள்ள ஸாமிக்கு ஆர்ச்சனை செய்வாய்,</div>
+        <div class="line">என் இதயத்தை கோவிலில் உன்னோடு நான் ஆர்ச்சனை செய்யும் ஆர்ச்சகனாக நான் தருகிறேன்.</div>
+        <div class="line">எப்போதும் அழகான புன்னகை, எப்போதும் சிரிப்பின் பொழிவு,</div>
+        <div class="line">அந்த அழகிற்கு நான் இருப்பேன், உன் நிழலாக, உன் துணையாக.</div>
+        <div class="line">ஆர்ச்சகனாக அல்ல, வாழ்நாளில் எப்போதும் உன் கையில் கைபிடித்து,</div>
+        <div class="line">உன் வாழ்வை ஒளிரச் செய்வதே என் ஆசை.</div>
+        <div class="line">சிலர் தமிழ் பேசினால் அழகாக இருக்கும் என்று நினைக்கிறார்கள்,</div>
+        <div class="line highlight">ஆனால் உண்மை என்னவென்றால், நீ பேசினால் அந்த தமிழ் அழகாகும்.</div>
+    </div>
+
+    <!-- Floating hearts -->
+    <script>
+        const colors = ['#ff0066', '#ff3399', '#ff66cc', '#ff99cc'];
+        for(let i=0; i<30; i++){
+            const heart = document.createElement('div');
+            heart.classList.add('heart');
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.animationDuration = 4 + Math.random() * 4 + 's';
+            heart.style.fontSize = 12 + Math.random() * 24 + 'px';
+            heart.style.color = colors[Math.floor(Math.random() * colors.length)];
+            heart.innerHTML = '❤️';
+            document.body.appendChild(heart);
+        }
+    </script>
+</body>
+</html>
